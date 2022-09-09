@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row bg-dark h-100">
+    <div class="col-12 px-0">
+      <app-carousel [items]="carouselData"></app-carousel>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <app-title-h1 type="danger" text="Lista de usuarios"></app-title-h1>
+  </div>
+  <app-card-user
+    class="col-12 col-md-6 col-xl-3"
+    [data]="user"
+    *ngFor="let user of users"
+  ></app-card-user>
+</div>

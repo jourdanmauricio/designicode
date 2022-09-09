@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-success my-5">DETALLE DE USUARIO</h1>
+  </div>
+  <div *ngIf="currentUser; else loaderComponent" class="col-12">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-3 mb-4 text-center">
+        <img class="dsc-user-img" src="{{ currentUser.avatar }}" alt="" />
+      </div>
+      <div class="col-12 col-md-6 col-xl-9">
+        <h2 class="text-primary border-bottom pb-3">
+          Detalle del usuario: {{ currentUser!.name }}
+        </h2>
+        <h3 class="text-secondary">Edad: {{ currentUser.age }}</h3>
+        <h3 class="text-secondary border-bottom pb-3">
+          Puesto: {{ currentUser.work ? currentUser.work : "---" }}
+        </h3>
+        <p class="text-secondary">Descripción: {{ currentUser.description }}</p>
+      </div>
+    </div>
+  </div>
+  <ng-template #loaderComponent>
+    <div class="col-12 text-center">
+      <img src="assets/images/loader.gif" alt="" />
+    </div>
+  </ng-template>
+</div>
